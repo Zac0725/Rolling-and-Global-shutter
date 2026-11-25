@@ -8,11 +8,6 @@
    Time Slice &mdash; A Rolling Shutter Lab
   </title>
   <style>
-   /*
-      All styles live here so that the entire project is ONE FILE.
-      You can open index.html by double-clicking it. No setup, libraries,
-      API calls, downloads, or account required.
-    */
     :root {
       color-scheme: light;
       --bg: #f4f2ec;
@@ -137,13 +132,6 @@
     th, td { padding:8px 10px; border-bottom:1px solid var(--border); }
     th { color:var(--muted); font-weight:700; }
     td { font-variant-numeric:tabular-nums; }
-    .tutorial { margin:18px 0 30px; padding:23px; }
-    .tutorial h2 { margin:0 0 12px; font-size:1.16rem; }
-    .tutorial-steps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
-    .tutorial-step { border:1px solid var(--border); background:var(--panel-light); padding:15px;
-      border-radius:5px; }
-    .tutorial-step b { color:var(--global); display:block; margin-bottom:5px; font-size:.84rem; }
-    .tutorial-step p { margin:0; color:var(--muted); font-size:.83rem; }
     footer { padding:3px 0 44px; font-size:.76rem; color:var(--muted); }
     @media(max-width:920px) { .workspace {grid-template-columns:1fr;}
       .control-panel {display:grid; grid-template-columns:1fr 1fr; column-gap:23px;}
@@ -152,7 +140,7 @@
     }
     @media(max-width:670px) { .hero{padding-top:30px;} .section-head{display:block;}
       .experiment-tabs{grid-template-columns:1fr;gap:7px;} .experiment-tab{min-height:0;}
-      .view-grid,.lower-grid,.tutorial-steps,.control-panel{grid-template-columns:1fr;}
+      .view-grid,.lower-grid,.control-panel{grid-template-columns:1fr;}
       .stat-grid{grid-template-columns:1fr 1fr;} .camera-note{min-height:0;}
       .header-note{display:none;} .control-panel h2,.control-panel>p{grid-column:auto;}
     }
@@ -202,7 +190,7 @@
     <p>
      These are two cameras
      <strong>
-      that have only 1 differnce
+      that have only one difference
      </strong>
      One captures
         the whole image at once. The other captures it
@@ -217,14 +205,14 @@
     <div class="section-head">
      <div>
       <h2 id="experimentTitle">
-       1) Modify the sliders and see for yourelf
+       1) Modify the sliders and see for yourself
       </h2>
       <p>
-       this starts with the spinning fan you can change to differnt ones by clicking the buttons below.
+       This starts with the spinning fan. You can switch to different experiments by clicking the buttons below.
       </p>
      </div>
      <span class="pill">
-      Built using calculated physics
+
      </span>
     </div>
     <div aria-label="Choose experiment" class="experiment-tabs" role="group">
@@ -241,7 +229,7 @@
        2. Tilting fence
       </strong>
       <span class="small">
-       how the fence lean over in rolling shutters
+       how the fence leans over in rolling shutters
       </span>
      </button>
      <button class="experiment-tab" data-scene="led" type="button">
@@ -249,7 +237,7 @@
        3. LED stripes
       </strong>
       <span class="small">
-       how lights form strips in rolling shutters
+       how lights form stripes in rolling shutters
       </span>
      </button>
     </div>
@@ -274,7 +262,7 @@
          <strong>
           the same time.
          </strong>
-         This prevents delays and keeps the orignal form
+         This prevents delays and keeps the original form
         </div>
        </div>
        <div class="camera-frame">
@@ -307,7 +295,7 @@
          &olarr; Reset
         </button>
         <button class="btn" id="saveBtn" type="button">
-         &darr; Downgload comaparison
+         &darr; Download comparison
         </button>
        </div>
        <span aria-live="polite" class="status" id="status">
@@ -460,7 +448,7 @@
       The fan did not bend.
           The camera recorded it at different heights row by row causing delay.
      </div>
-     <p>A camera contains a sensor which reads light, now, not all sensors read light the same you see. Some sensors read row by row whereas other sensors read the entire frame at once.There are three main variables which affect the final image knowing this information: revolution speed, full sensor readout times, and exposure per sensor row. A model we can use, is imagining a painter instead of a sensor. Full sensor readout is the amount of time taken for the first row to the last row to be read, so imagine if a painter is painting from top to bottom, but very slowly- an object moving in that painting will end up in a completely different position from when painting started! Exposure per sensor row is the how long each row is exposed to light, a low amount of time per row ends up causing the image to have large black bars, this is because our normal LED light bulbs actually flicker! Though the naked eye can't see it, when exposure per sensor row ends up being reduced to extremely low numbers, the dark bars form from this flickering. Now, using our painter example,if we only lightly tap a brush super fast on the line then we'll end up getting choppy lines, but if we hold the brush for a whiile longer we end up getting a smooth, slightly blurry image, creating the 'motion blur' we see in household fans. Finally, when considering revolution speed we can imagine a fan pointing upwards at the start of 'painting', as we take time to reach the bottom, the fan has spun, and so now its pointing to the left, this creates an odd tilted shape to our image; This becomes much more noticeable as revolution speed increases. </p>
+     <p>A camera contains a sensor which reads light, now, not all sensors read light the same you see. Some sensors read row by row whereas other sensors read the entire frame at once. There are three main variables which affect the final image knowing this information: revolution speed, full sensor readout times, and exposure per sensor row. A model we can use, is imagining a painter instead of a sensor. Full sensor readout is the amount of time taken for the first row to the last row to be read, so imagine if a painter is painting from top to bottom, but very slowly- an object moving in that painting will end up in a completely different position from when painting started! Exposure per sensor row is how long each row is exposed to light, a low amount of time per row ends up causing the image to have large black bars, this is because our normal LED light bulbs actually flicker! Though the naked eye can't see it, when exposure per sensor row ends up being reduced to extremely low numbers, the dark bars form from this flickering. Now, using our painter example, if we only lightly tap a brush super fast on the line then we'll end up getting choppy lines, but if we hold the brush for a while longer we end up getting a smooth, slightly blurry image, creating the 'motion blur' we see in household fans. Finally, when considering revolution speed we can imagine a fan pointing upwards at the start of 'painting', as we take time to reach the bottom, the fan has spun, and so now it’s pointing to the left, this creates an odd tilted shape to our image; This becomes much more noticeable as revolution speed increases. </p>
      <details>
       <summary>
       The actual maths (and what the code computes)
@@ -556,10 +544,10 @@
       <h1>Rolling VS Global Shutter</h1>
       <h2>Rolling Shutter</h2>
       <p>A rolling shutter captures the image row by row, from bottom to top. This process happens in a quarter of a second thus normally does not affect the outcome of
-         a photo or video. However, if something was to move faster that the shutter, say a proppeler, the sensor will capture the propeller at
+         a photo or video. However, if something was to move faster than the shutter, say a propeller, the sensor will capture the propeller at
          a different position in every row making the image seem distorted. This limitation is mainly due to the fact that many cameras have a mechanical
-         shutter that can only expose parts of the sensor at a time, as shown in the gif, furthermore, a rolling shutter approach takes less proccesing
-         power as the proccessor only has to process one line at a time, thus generating less heat and making it cheaper. </p>
+         shutter that can only expose parts of the sensor at a time, as shown in the gif, furthermore, a rolling shutter approach takes less processing
+         power as the processor only has to process one line at a time, thus generating less heat and making it cheaper. </p>
       <h2>Global Shutter</h2>
       <p>A global shutter solves the problems brought by rolling shutter. A Global shutter captures the entire image at the same time avoiding the problems
          brought about by capturing the image line by line entirely. However, to facilitate a global shutter a faster processor is required as it needs to
@@ -570,70 +558,19 @@
       <img class="shutter-gif" src="Adobe Express - videoplayback.gif" alt="My camera setup">
     </section>
 
-   <section class="panel tutorial">
-    <h2>
-     Three tiny challenges (your two-minute introduction)
-    </h2>
-    <div class="tutorial-steps">
-     <div class="tutorial-step">
-      <b>
-       01 &rarr; Bend a fan
-      </b>
-      <p>
-       Increase the readout time. Notice the blades can appear curved because different rows see different angles.
-      </p>
-     </div>
-     <div class="tutorial-step">
-      <b>
-       02 &rarr; Tilt a fence
-      </b>
-      <p>
-       Switch to the fence, crank movement speed, then flip scan direction. Watch the tilt reverse.
-      </p>
-     </div>
-     <div class="tutorial-step">
-      <b>
-       03 &rarr; Make dark stripes
-      </b>
-      <p>
-       Switch to the LED, use a short exposure, then a long one. See how banding fades as the camera averages more light pulses.
-      </p>
-     </div>
-    </div>
-   </section>
   </main>
-  <footer>
-   Model scope: a synthetic 2D scene, constant scan speed, a simplified global shutter,
-    and sampled integration of light over exposure. No physical sensor noise, optics,
-    pixel saturation, or real camera hardware calibration. All visuals generated locally in this browser.
-  </footer>
+>
   <script>
    "use strict";
 
-    /* ======================================================================
-       PART A: PHYSICS MODEL
-       ======================================================================
-       This is the IMPORTANT PART for the hackathon.
-       The following functions are not animations with prepared frames.
-       They calculate exactly WHEN each image row collects light.
 
-       Units:
-         t = seconds; scanMs = milliseconds; exposureMs = milliseconds;
-         y = integer row (0 at the top); speed = scene-dependent setting.
+    const W = 520;
+    const H = 294;
+    const TAU = 2 * Math.PI;
+    const STRIP_HEIGHT = 3;
+    const EXPOSURE_SAMPLES = 5;
+    const FRAME_GAP_MS = 1000 / 60;
 
-       Try to explain this sentence to judges:
-       "A rolling-shutter image contains multiple moments of time, separated
-        by where they appear vertically in the picture."
-    */
-
-    const W = 520;                 // Width of the simulated sensor, in pixels.
-    const H = 294;                 // Height of the simulated sensor, in pixels.
-    const TAU = 2 * Math.PI;       // One full revolution, measured in radians.
-    const STRIP_HEIGHT = 3;       // Render 3 sensor rows per strip for speed.
-    const EXPOSURE_SAMPLES = 5;   // Estimate exposure by taking 5 light samples.
-    const FRAME_GAP_MS = 1000 / 60; // Aim for up to 60 frames per second.
-
-    // These are pure functions: same inputs => same answers.
     function normalizedRow(y, height = H, direction = "down") {
       const progress = Math.min(1, Math.max(0, y / Math.max(1, height - 1)));
       return direction === "up" ? 1 - progress : progress;
@@ -643,22 +580,16 @@
       return frameTime + normalizedRow(y, height, direction) * scanMs / 1000;
     }
 
-    // An exposure is NOT instantaneous: a sensor measures the light arriving
-    // over an interval. We approximate the integral with 5 evenly spaced samples.
-    // Midpoint samples reduce errors compared with samples at the boundaries.
     function exposureSampleSeconds(startTime, sampleIndex, exposureMs, count = EXPOSURE_SAMPLES) {
       return startTime + ((sampleIndex + 0.5) / count) * exposureMs / 1000;
     }
 
-    // Derived quantities explain what users are seeing.
     const fanRotationDegrees = (speedRPS, scanMs) => 360 * speedRPS * scanMs / 1000;
     const fenceSpeedPxPerSecond = speed => speed * 22;
     const fenceDisplacementPx = (speed, scanMs) => fenceSpeedPxPerSecond(speed) * scanMs / 1000;
     const ledFrequencyHz = speed => speed === 0 ? 0 : speed * 8;
     const ledCycles = (speed, scanMs) => ledFrequencyHz(speed) * scanMs / 1000;
 
-    // Test/debug helpers. Open DevTools and type RollingShutterLab.model
-    // to inspect or try the formulas yourself.
     window.RollingShutterLab = {
       model: { normalizedRow, rowStartSeconds, exposureSampleSeconds,
                fanRotationDegrees, fenceSpeedPxPerSecond, fenceDisplacementPx,
@@ -666,9 +597,6 @@
       getState: () => ({ ...state })
     };
 
-    /* ======================================================================
-       PART B: STATE + DOM
-       ====================================================================== */
 
     const DEFAULTS = {scene:"fan", speed:10, scanMs:30, exposureMs:1.5,
                       direction:"down", showScan:true, paused:false};
@@ -697,12 +625,6 @@
     function round(value, digits = 1) { return Number(value).toFixed(digits); }
     function positiveMod(n, mod) { return ((n % mod) + mod) % mod; }
 
-    /* ======================================================================
-       PART C: DRAW OUR THREE SYNTHETIC WORLDS
-       ======================================================================
-       Cache the fixed artwork. Paint moving elements at the time sampled by
-       each sensor strip, or across the entire image for the global shutter.
-    */
 
     function drawBackground(ctx) {
       ctx.fillStyle = "#e8e9e5";
@@ -863,13 +785,6 @@
     const ledOn = makeLEDPanel("#bfd3b3");
     const ledOff = makeLEDPanel("#394846");
 
-    /* ======================================================================
-       PART D: SIMULATE THE CAMERA SENSOR
-       ======================================================================
-       The global shutter uses one start time for every row. For rolling
-       readout, each three-row strip starts at the time of its midpoint.
-       Both cameras average the same five midpoint samples per exposure.
-    */
 
     function renderMotionSample(t, sampleIndex, rolling) {
       const drawMotion = state.scene === "fan" ? drawFan : drawFence;
@@ -896,8 +811,6 @@
       ctx.fillStyle = "#000";
       ctx.fillRect(0, 0, W, H);
       ctx.save();
-      // Each opaque layer contains one sample for every row. Accumulate the
-      // five layers with equal weight to approximate the exposure integral.
       ctx.globalCompositeOperation = "lighter";
       ctx.globalAlpha = 1 / EXPOSURE_SAMPLES;
       for (let sample = 0; sample < EXPOSURE_SAMPLES; sample++) {
@@ -917,8 +830,6 @@
     }
 
     function renderLEDExposure(ctx, frameTime, rolling) {
-      // The light has two levels. Averaging five samples is equivalent to
-      // blending the ON and OFF images in proportion to the sampled ON time.
       const frequency = ledFrequencyHz(state.speed);
       const stripHeight = rolling ? STRIP_HEIGHT : H;
       ctx.drawImage(ledOff, 0, 0);
@@ -954,7 +865,6 @@
         rollingCtx.drawImage(globalCanvas, 0, 0);
       }
       if (state.showScan && state.scanMs > 0) {
-        // This marker tracks the direction of the scan.
         const progress = positiveMod(frameTime * 0.9, 1);
         const y = (state.direction === "up" ? 1 - progress : progress) * (H - 1);
         rollingCtx.fillStyle = "rgba(45,98,101,0.18)";
@@ -964,12 +874,6 @@
       }
     }
 
-    /* ======================================================================
-       PART E: REAL, COMPUTED STATS + TIME DIAGRAM
-       ======================================================================
-       The numbers below update from exactly the same formulas as the image.
-       If you change the model, update these labels too.
-    */
 
     function updateNumbers() {
       const s=state;
@@ -1022,7 +926,6 @@
       const xTime=ms=>l+(ms/maxMs)*(r-l);
       const yRow=frac=>top+frac*(bottom-top);
       ctx.font="15px system-ui, sans-serif";
-      // Light grid and axis labels.
       for(let i=0;i<=4;i++) {
         const x=xTime(maxMs*i/4);
         ctx.strokeStyle="#cdd5d2"; ctx.lineWidth=1;
@@ -1032,7 +935,6 @@
       ctx.fillStyle="#52606c";ctx.font="14px system-ui, sans-serif";
       ctx.fillText("0%",16,top+5);ctx.fillText("50%",8,yRow(.5)+4);
       ctx.fillText("100%",5,bottom+5);ctx.fillText("time (ms)",r-70,height-9);
-      // Draw a translucent exposure-width band around the rolling line.
       ctx.fillStyle="rgba(130,117,142,.24)";
       ctx.beginPath();
       for(let i=0;i<=50;i++) {
@@ -1047,10 +949,8 @@
         ctx.lineTo(xTime(start+state.exposureMs),yRow(frac));
       }
       ctx.closePath();ctx.fill();
-      // Global exposure starts at the same time on every row.
       ctx.strokeStyle="#955343";ctx.lineWidth=4;
       ctx.beginPath();ctx.moveTo(xTime(0),top);ctx.lineTo(xTime(0),bottom);ctx.stroke();
-      // Rolling readout changes the start time with the sensor row.
       ctx.strokeStyle="#2d6265";ctx.lineWidth=4;
       ctx.beginPath();
       ctx.moveTo(xTime(state.direction==="up"?state.scanMs:0),top);
@@ -1074,7 +974,6 @@
     }
 
     function selectScene(scene) {
-      // Deliberately choose useful defaults for each experiment.
       if(scene==="fan") state={...state,scene,speed:10,scanMs:30,exposureMs:1.5};
       if(scene==="fence") state={...state,scene,speed:25,scanMs:55,exposureMs:1};
       if(scene==="led") state={...state,scene,speed:12,scanMs:55,exposureMs:1};
@@ -1104,7 +1003,6 @@
     });
 
     $("saveBtn").addEventListener("click",()=>{
-      // Flush a pending control change so the exported PNG uses current settings.
       if (renderPending) renderNow();
       const output=makeCanvas(W*2+30,H+48);
       const o=output.getContext("2d");
@@ -1152,8 +1050,6 @@
       if (!state.paused) scheduleFrame();
     }
 
-    // Sanity checks for the core mathematics. These intentionally fail loudly
-    // while developing if a future team member accidentally breaks the model.
     function assertNearlyEqual(actual, expected, name) {
       if(Math.abs(actual-expected)>1e-10) throw new Error(`${name}: ${actual} != ${expected}`);
     }
